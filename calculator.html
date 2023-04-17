@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <link rel="stylesheet" href="calculator.css"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+input{
+    font-size: 25px;
+}
+
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(142, 113, 137);
+}
+
+
+.wrapper{
+    height:550px;
+    width: 350px;
+    border-radius: 10px;
+    background: gray;
+    border: 3px solid navy;
+}
+
+.display{
+    height:80px;
+     width: 100%;
+     border-radius: 10px;
+     border: 2px solid black;
+     background: rgb(146, 51, 130);
+     text-align: center;
+}
+
+p{
+    margin-top: 15px;
+    font-size: 40px;
+}
+
+.row{
+    margin: 12px;
+
+    height:80px;
+    width:320px;
+    /* border: 2px solid wheat; */
+    /* background:blue; */
+    text-align: center;
+    display:flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.col1{
+    background: olive;
+    height:60 px ;
+    width: 70px;
+    border-radius:10px;
+    border:3px solid navy;
+}
+.col2{
+    background: olive;
+    height:60 px ;
+    width: 70px;
+    border-radius:10px;
+    border:3px solid navy;
+}
+.col3{
+    background: olive;
+    height:60 px ;
+    width: 70px;
+    border-radius:10px;
+    border:3px solid navy;
+}
+.col4{
+    background: olive;
+    height:60 px ;
+    width: 70px;
+    border-radius:10px;
+    border:3px solid navy;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Shree Ganeshaya Namaha</h1>
+
+        <div class="wrapper">
+
+            <div>
+                <input type="text" name="screen" id="screen" class="display" placeholder="shubha - labha" >
+            </div>
+            <div class="row">
+
+                <div class="col1" id="num">
+                    <p>(</p>
+                </div>
+                <div class="col2" id="num">
+                    <p>)</p>
+                </div>
+                <div class="col3" id="num" >
+                    <p>C</p>
+                </div>
+
+                <div class="col4" id="num">
+                    <p>%</p>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col1" id="num">
+                    <p>7</p>
+                </div>
+                <div class="col2" id="num">
+                    <p>8</p>
+                </div>
+                <div class="col3" id="num">
+                    <p>9</p>
+                </div>
+
+                <div class="col4" id="num">
+                    <p>*</p>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col1" id="num">
+                    <p>4</p>
+                </div>
+                <div class="col2" id="num">
+                    <p>5</p>
+                </div>
+                <div class="col3" id="num">
+                    <p>6</p>
+                </div>
+
+                <div class="col4" id="num">
+                    <p>-</p>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col1" id="num">
+                    <p>1</p>
+                </div>
+                <div class="col2" id="num">
+                    <p>2</p>
+                </div>
+                <div class="col3" id="num">
+                    <p>3</p>
+                </div>
+
+                <div class="col4" id="num">
+                    <p>+</p>
+                </div>
+
+            </div>
+            <div class="row">
+
+                <div class="col1" id="num">
+                    <p>0</p>
+                </div>
+                <div class="col2" id="num">
+                    <p>.</p>
+                </div>
+                <div class="col3" id="num">
+                    <p>/</p>
+                </div>
+
+                <div class="col4" id="num">
+                    <p>=</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let btn=document.querySelectorAll("p");
+let display =document.getElementById("screen");
+let screenVal='';
+for(item of btn)
+{
+    item.addEventListener("click",(e)=>{
+        btnText =e.target.innerText;
+        console.log(btnText)
+        if(btnText == 'C')
+        {
+            screenVal="";
+            display.value=screenVal;
+        }
+        else if(btnText=='=')
+        {
+           display.value=eval();
+        }
+        else
+        {
+        screenVal+=btnText;
+        display.value=screenVal;
+        }
+    })
+}
+
+function eval()
+{
+    let text =display.value;
+    let flag=1;
+    let before=0;
+    let sign;
+    let after=0;
+    for(t in text)
+    {
+        if(text[t]=='-' ||text[t]=='+' ||text[t]=='*' ||text[t]=='%' )
+        {
+            sign=text[t];
+            flag=0;
+        }
+
+        else
+        {
+            if(flag)
+            {
+                before+=text[t];
+            }
+            else{
+                after+=text[t];
+            }
+        }
+    }
+    
+    let a=parseInt(before);
+    let b=parseInt(after);
+
+    console.log(a);
+    console.log(b);
+    if(sign=='-' )
+    {
+           return (a-b);
+     }
+     else if(sign=='+')
+     {
+        return (a+b);
+     }
+     else if(sign=='*')
+     {
+        return (a*b);
+     }
+     else if(sign=='%')
+     {
+        return (a%b);
+     }
+}
+    </script>
+</body>
+
+</html>

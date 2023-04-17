@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+overflow: hidden;
+    background: rgb(142, 113, 137);
+}
+
+.wrapper{
+
+    max-width:405px ;
+    margin: 135px auto;
+    background: #fff;
+    border-radius: 7px;
+    padding: 28px 0;
+}
+.input-tag{
+    height: 52px;
+    padding: 0 25px;
+    position: relative;
+}
+
+.input-tag img{
+    position: absolute;
+    top: 50%;
+    transform: translate(17px,-50%);
+}
+
+.input-tag input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 0 20px 0 53px;
+}
+
+.controals,li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.controals{
+    padding: 18px 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.filters span{
+    cursor: pointer;
+    margin: 0 8px;
+    font-size: 17px;
+}
+
+.filters span.active{
+    color: rgb(142, 113, 137);;
+}
+
+.filters span:first-child{
+    margin-left: 0;
+}
+
+.controals .clear-btn{
+    outline: none;
+    border: none;
+    background: rgb(142, 113, 137);
+    color: #fff;
+    padding: 7px 13px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-box{
+    margin: 20px 25px;
+}
+
+.task-box .task{
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    align-items: flex-start;
+    border-bottom: 1px solid #ccc;
+}
+
+.task-box .task:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.task label{
+    display: flex;
+}
+.task label p.checked{
+    text-decoration: line-through;
+}
+
+.task-box .task label {
+    display: flex;
+    align-items: flex-start;
+}
+
+.task label input{
+    margin-top: 7px;
+    margin-right: 12px;
+}
+
+.task .settings{
+    cursor: pointer;
+    position: relative;
+}
+
+.settings .task-menu{
+position: absolute;
+    padding: 5px 0;
+    right: -5px;
+    bottom: -65px;
+    z-index: 2;
+    transform: scale(0);
+    border-radius: 4px;
+    background: #fff;
+    transform-origin: top right;
+    transition:transform 0.2s ease;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+} 
+/* initially transform scaleshoul be actually 0 which gradually increase to 1 when we hover onto the  settings button which is writtern in downwards
+ transition is the time elapse between  the initial and after hovering position */
+
+.task-menu.show{
+    transform:scale(1);
+
+}
+
+.task-menu li{
+    height: 25px;
+    font-size: 16px;
+    padding: 17px 15px;
+    margin-bottom: 2px;
+    justify-content: flex-start;
+}
+.task-menu li:last-child{
+    margin-bottom: 0;
+}
+.task-menu li:hover{
+    background: #f5f5f5;
+}
+
+.task-menu li i{
+    padding-right: 8px;
+}

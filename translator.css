@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(142, 113, 137);
+}
+
+.container{
+    width:690px ;
+    background: #fff;
+    border-radius: 7px;
+    padding: 30px;
+}
+
+.wrapper{
+    border-radius:5px ;
+    border:1px solid #bbb;
+}
+
+.wrapper .text-input{
+    display: flex;
+    border-bottom: 1px solid #bbb;
+}
+
+.text-input .to-text{
+    border-left:1px solid #bbb;
+    border-radius:0px;
+}
+
+.text-input textarea{
+    height:250px;
+    width:100%;
+    border: none;
+    outline: none;
+    background:none;
+    font-size: 18px;
+    border-radius:5px;
+    background: none;
+    padding: 10x 15px;
+}
+
+.controals{
+    display: flex;
+    list-style: none;
+    padding: 12px 15px;
+    align-items: center;
+    justify-content: space-between;
+    /* if the justify content was center everything came to center as justify comtent is space between it relatively center to the remainig div */
+}
+
+.controals, li, .icons,.icons i{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controals .row.from .icons{
+    border-right:1px solid #bbb;
+    padding-right: 15px;
+
+}
+
+.controals .row.to .icons{
+    border-left:1px solid #bbb;
+    padding-left: 15px;
+}
+
+.controals .icons{
+    width: 38%;
+}
+
+.controals .icons i{
+    width: 50px;
+    color: #9f9f9f;
+    cursor:pointer;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.controals .row select{
+ border:none;
+ outline:none;
+ background: none;
+ font-size: 18px;   
+}
+
+.controals .exchanges{
+    color: #9f9f9f;
+    cursor: pointer;
+}
+
+.container button{
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    outline:none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 17px;
+    color:#fff;
+    background: rgb(142, 113, 137);;
+}

@@ -1,0 +1,81 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container{
+    min-height: 100vh;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.wrapper{
+    width: 300px;
+    height :500px;
+    border-radius:7px ;
+    background: navy;
+}
+
+.inputs{
+    padding: 55px;
+    width: 100%;
+    position: relative;
+   
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    margin-top: 25px;
+}
+
+.mail {
+    height: 45px;
+    display: flex;
+    width:100%;
+    padding:10px 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    
+    /* padding:50px; */
+    /* margin:50px; */
+    
+}
+.p{
+    color:white;
+}
+.pass{
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 45px;
+    display: flex;
+    width:100%;
+    padding:10px 10px;
+    border: 2px solid gray;
+    
+}
+#id{
+    color: red;
+}
+
+.buttonBox{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+       
+}
+
+.ButtonDesign{
+    width: 80%;
+    height: 30px;
+    background: gray;
+}
+
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+   <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container{
+    min-height: 100vh;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.wrapper{
+    width: 300px;
+    height :500px;
+    border-radius:7px ;
+    background: navy;
+}
+
+.inputs{
+    padding: 55px;
+    width: 100%;
+    position: relative;
+   
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    margin-top: 25px;
+}
+
+.mail {
+    height: 45px;
+    display: flex;
+    width:100%;
+    padding:10px 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    
+    /* padding:50px; */
+    /* margin:50px; */
+    
+}
+.p{
+    color:white;
+}
+.pass{
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 45px;
+    display: flex;
+    width:100%;
+    padding:10px 10px;
+    border: 2px solid gray;
+    
+}
+#id{
+    color: red;
+}
+
+.buttonBox{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+       
+}
+
+.ButtonDesign{
+    width: 80%;
+    height: 30px;
+    background: gray;
+}
+
+
+
+   </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper" >
+            <header>
+                login form
+            </header>
+            <div class="inputs" id ="wrapper2">
+                <p class="p">Enter mail</p>
+                <div class="mail">    
+                  <input type="email" name="" id="mail" placeholder="abc@gmail.com">
+                </div>
+                <p class="p">Enter password</p>
+                <div class="pass">
+                    <input type="password" id="pass" placeholder="password">
+                </div>
+                <div class="forget">
+                <a id ="ch" class="p" href="http://forget.html">forgot password</a>
+            
+                </div>
+
+            </div>
+            <div class="buttonBox">
+                <button class="ButtonDesign" id="btn">Login</button>
+            </div>
+        </div>
+    </div>
+    <script >
+        
+let mail = document.getElementById("mail");
+let wrapper = document.getElementById("wrapper2");
+let pass= document.getElementById("pass");
+let change = document.getElementById("ch");
+let button = document.getElementById("btn");
+
+button.addEventListener("click",()=>{
+    if(mail.value=="g19@gmail.com" && pass.value=="123")
+    {
+        if(document.getElementById('text'))
+        {
+            document.getElementById('text').style.display="none";  
+        }
+        console.log("successfull");
+        window.location.href = "localhost:5000";
+    }
+    else{
+
+        change.style.color = "red";
+        let att =document.createElement('div');
+        att.setAttribute('id','text');
+        att.style.setProperty('color','red');
+        att.innerHTML="You have entered the wrong input";
+        wrapper.appendChild(att);
+
+    }
+})
+    </script>
+</body>
+
+</html>

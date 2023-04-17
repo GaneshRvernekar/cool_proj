@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  padding: 10px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #E3F2FD;
+}
+.container{
+  width: 850px;
+  padding: 30px 35px 35px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+/* 
+.container.disable :where(.editor-panel,.reset-filter,.save-img){
+    opacity: 0.6;
+    pointer-events:none;
+} */
+/* Make the screen inactive during this time in-order to first upload the image into it .*/
+.container h2{
+    margin-top: -8px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.container .wrapper{
+    display: flex;
+    margin: 20px 0;
+    min-height: 335px;
+}
+.wrapper .editor-panel{
+    width: 280px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.editor-panel .title{
+    display: block;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.editor-panel .options , .controls{
+    display: flex;
+    flex-wrap: wrap;
+    /* If the additional information that is going out of the specified area then it will be inclined in the downward direction  */
+justify-content: space-between;
+}
+
+.editor-panel button{
+    height: 40px;
+    font-size: 14px;
+    color: black;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    background: #fff;
+    margin-bottom: 8px;
+}
+/* I have a believe that it will remove the problem as a scope resolution operator in such cases  */
+.editor-panel .filter button{
+    width: calc(100% / 2 - 4px);
+}
+.editor-panel .rotate button{
+    width: calc(100% / 4 - 3px);
+}
+
+.filter button.active{
+    color: #fff;
+    background: navajowhite;
+    border-color: aqua;
+}
+.filter .slider{
+    margin-top: 12px;
+}
+
+.filter .slider .filter-info{
+    display: flex;
+    justify-content: space-between;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.editor-panel .rotate{
+    margin-top: 17px;
+  }
+
+.filter .slider input{
+    width: 100%;
+    height: 5px;
+}
+
+.rotate button:nth-child(4),
+.rotate button:nth-child(3){
+    font-size: 18px;
+
+}
+
+.wrapper .preview-img{
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    margin-left: 20px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-img img{
+    max-width: 490px;
+    max-height: 335px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .controls button{
+    padding: 11px 20px;
+    font-size: 14px;
+    border-radius: 3px;
+    outline: none;
+    color: gray;
+    cursor: pointer;
+    background: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  .controls .reset-filters{
+    color: gray;
+    border: 1px solid #6C757D;
+  }
+  .controls .reset-filters:hover{
+    color: #fff;
+    background: green;
+  }
+  .controls .choose-img{
+    background: #6C757D;
+    border: 1px solid #6C757D;
+  }
+  .controls .save-img{
+    margin-left: 5px;
+    background: #5372F0;
+    border: 1px solid #5372F0;
+  }
+  

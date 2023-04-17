@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    border: 0;
+}
+
+body{
+    /* display: flex; */
+    min-height: 100vh;
+    justify-content: center;          
+    align-items: center;          
+    padding: 0;          
+    background: navajowhite;          
+}          
+
+.container{          
+    margin-left: 200px;
+    display: flex;          
+    height: 200px;
+    width: 200px;
+    align-items: center;
+    border-radius: 7px;
+    background: aqua;
+}

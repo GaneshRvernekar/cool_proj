@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="Sl_calc.css"> -->
+    <title>Returns</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vw;
+    background: goldenrod;
+}
+
+.container {
+    height: 400px;
+    width: 300px;
+    border: 2rpx solid blue;
+    border-radius: 8px;
+    background: gray;
+}
+
+.principle {
+    height: 100px;
+    width: 100%;  
+}
+
+
+h3 {
+    padding-left: 10px;
+    margin: 20px 70px 0;
+}
+
+h4 {
+    margin: 0 50px 0;
+}
+
+.type1 {
+    margin: 0 70px 0;
+    height: 20px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.type2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 70px;
+    height: 20px;
+    width: 60%;
+}
+
+.rate_time {
+    height: 100px;
+    width: 0%;
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type=number] {
+    width: 50px;
+    margin: 0 40px 0;
+    border: 2px solid goldenrod;
+    border-radius: 3px;
+}
+
+input[type=text] {
+    border: 2px solid goldenrod;
+    border-radius: 3px;
+}
+
+.rate {
+    margin: 5px 15px 5px;
+    height: 100px;
+    width: 100px;
+}
+
+.time {
+    margin: 5px 30px 5px;
+    height: 100px;
+    width: 100px;
+
+}
+
+
+.buttons {
+    height: 100px;
+    width: 100%;
+}
+
+.total1 {
+    height: 100px;
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#answer{
+    margin-bottom: 20px;
+    font-style: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn {
+    margin-top: 20px;
+    height: 50px;
+    width: 50%;
+    background: goldenrod;
+    border-radius: 5px;
+
+}
+    </style>
+
+
+<body>
+
+    <div class="container">
+        <div class="principle">
+            <h3>Enter the Amount</h3>
+            <div class="type1">
+                <input id="p" type="text" placeholder="INR">
+            </div>
+            <div class="type2">
+                <input id="pbar" type="range" min="1" max="100000" value="10000">
+            </div>
+        </div>
+
+        <div class="rate_time">
+            <div class="rate">
+                <h4>ROE</h4>
+                <input id="r" type="number" placeholder="%">
+                <input id="rbar" type="range" min="1" max="10" value="4">
+            </div>
+            <div class="time">
+                <h4>Time</h4>
+                <input id="t" type="number" placeholder="years">
+                <input id="tbar" type="range" min="1" max="5" value="1">
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="button" class="btn">Submit</button>
+        </div>
+
+        <div id="total" class="total1">
+
+        </div>
+    </div>
+    </head>
+    <script >
+        console.log("heyy guys ")
+let cont = document.getElementById('total')
+let p = document.getElementById('p');
+let pbar = document.getElementById("pbar")
+let r = document.getElementById('r')
+let rbar = document.getElementById('rbar')
+let t = document.getElementById('t')
+let tbar = document.getElementById('tbar')
+let button = document.getElementById('button')
+
+
+pbar.addEventListener("input", e => {
+    p.value=pbar.value;
+})
+
+rbar.addEventListener("input", e => {
+    r.value=rbar.value;   
+})
+
+tbar.addEventListener("input", e => {
+    t.value=tbar.value;
+})
+
+button.addEventListener("click",(e)=>{
+    if(document.getElementById('answer'))
+    {
+        let ab=document.getElementById('answer');
+        console.log("hi")
+        cont.removeChild(ab);  
+    }
+let principle =parseInt(p.value);
+let pincipl=principle+(principle*(r.value)*(t.value)*(0.01));
+let att= document.createElement('text');
+console.log(pincipl);
+att.setAttribute('id','answer');
+att.innerText="Total sum will be "+pincipl;
+cont.appendChild(att);
+
+})
+    </script>
+
+</body>
+
+
+</html>

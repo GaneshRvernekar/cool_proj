@@ -1,0 +1,34 @@
+input{
+    width: 500px;
+    height: 25px;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+}
+h1{
+    text-align: center;
+}
+
+h1,h2{
+    text-align: center;
+}
+
+body{
+    width: 100%;
+    text-align: center;
+}
+
+.cse{
+    background-color: blue;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.pad{
+    padding: 20px;
+}
